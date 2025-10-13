@@ -4,40 +4,47 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <link rel="stylesheet" href="./src/style.css"/>
+    <script src="2048.js"></script>
+    <title>2048</title>
   </head>
   <body>
     <div id="app"></div>
+    <h1>2048</h1>
+    <h2>Current: <span id="score">0</span></h2>
+    <h3>Best: <span id="score"></span></h3>
     <button class="newGame">New Game</button>
-    <div class="score">current:</div>
-    <div class="score">test:</div>
-
-    <div class="game">
-      <div class="button">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <div class="button">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <div class="button">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <div class="button">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <div class="l_game">
+      <div class="p_game">
+        <div id="board">
+          <div class="box">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="box">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="box">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="box">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
       </div>
     </div>
+  
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
