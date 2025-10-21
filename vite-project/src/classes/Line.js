@@ -1,5 +1,4 @@
 
-
 export default class Line{
     constructor(v){
         this.value = v

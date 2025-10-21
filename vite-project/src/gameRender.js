@@ -37,4 +37,21 @@ export default function start(){
         game.newGame()
         render(game)
     })
+
+    window.addEventListener("keydown", (e)=>{
+        if (e.code == "KeyA"){
+            game.moveLeft()
+            render(game)
+        }
+
+        if (e.code == "KeyD"){
+            game.moveRight()
+            render(game)
+        }
+
+        if (e.code == "KeyB"){
+            game.moveUp()
+            render(game)
+        }
+    })
 }

@@ -1,4 +1,4 @@
-import Line from "./Line.js"
+import Line from "./Line.js";
 
 export default class Game{
 
@@ -22,6 +22,21 @@ export default class Game{
 
 
     }
+
+    newGame(){
+
+        this.tiles = [
+            [null, null, null, null],
+            [null, null, null, null],
+            [null, null, null, null],
+            [null, null, null, null],
+        ]
+
+        this.score = 0
+        this.spawnTile()
+        this.spawnTile()
+    }
+
 
     findEmptySpaces(){
         let emptyCoords = []
@@ -52,8 +67,34 @@ export default class Game{
     }
 
     moveLeft(){
+        for (let y = 0; y < this.tiles.length; y++){
+            for(let x = 1; x < this.tiles[y].length; x++){
+                if(this.tiles[y][x]) {
+                    this.tiles[y][0] = this.tiles[y][x]
+                    this.tiles[y][x] = null
+                }
+            }
+        }
     }
-    moveRight(){}
-    moveUp(){}
+    moveRight(){
+        for (let y = 0; y < this.tiles.length; y++){
+            for(let x = 1; x < this.tiles[y].length - 1; x++){
+                if(this.tiles[y][x]) {
+                    this.tiles[y][this.tiles[y].length - 1] = this.tiles[y][x]
+                    this.tiles[y][x] = null
+                }
+            }
+        }
+    }
+    moveUp(){
+        for (let y = 0; y < this.tiles.length; y++){
+            for(let x = 1; x < this.tiles[y].length - 1; x++){
+                if(this.tiles[y][x]) {
+                    this.tiles[y][this.tiles[y].length - 1] = this.tiles[y][x]
+                    this.tiles[y][x] = null
+                }
+            }
+        }
+    }
     moveDown(){}
 }
