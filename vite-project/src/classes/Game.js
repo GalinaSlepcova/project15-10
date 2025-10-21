@@ -87,14 +87,37 @@ export default class Game{
         }
     }
     moveUp(){
-        for (let y = 0; y < this.tiles.length; y++){
-            for(let x = 1; x < this.tiles[y].length - 1; x++){
-                if(this.tiles[y][x]) {
-                    this.tiles[y][this.tiles[y].length - 1] = this.tiles[y][x]
-                    this.tiles[y][x] = null
-                }
+        for (let x = 0; x < this.tiles[0].length; x++) {
+        let column = [];
+        for (let y = 0; y < this.tiles.length; y++) {
+            if (this.tiles[y][x] && this.tiles[y][x].value !== 0) {
+                column.push(this.tiles[y][x].value);
             }
         }
+
+        let merged = [];
+        for (let i = 0; i < column.length; ) {
+            if (i + 1 < column.length && column[i] === column[i + 1]) {
+                merged.push(column[i] * 2);
+                i += 2; 
+            } else {
+                merged.push(column[i]);
+                i++;
+            }
+        }
+
+        for (let y = 0; y < this.tiles.length; y++) {
+            if (y < merged.length) {
+                this.tiles[y][x] = new Tile(merged[y]);
+            } else {
+                this.tiles[y][x] = null; 
+        }
     }
-    moveDown(){}
+    }
+}
+
+ moveDown(){
+    
+ }
+
 }
